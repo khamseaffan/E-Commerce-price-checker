@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-commerce Price Checker</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="{%static 'styles/main.css'}"> -->
+</head>
+<style type="text/css">
+	*{
+	box-sizing: border-box;
+}
+body{
+	background-color: #1b1c20;
+}
+.container{
+	margin-top: 50px;
+	width:100%;
+	/*border:solid 1px #000;*/
+}
+.input-element > label{
+	font-size: 1.2em;
+}
+.input-element{
+	margin-left: 10%;
+	color:#66fcf1;
+	/*border:solid 1px #000;*/
+}
+
+.input-link{
+	border:1px solid #66fcf1;
+	background: #1b1c20;
+	color:#66fcf1;
+	display: inline-block;
+/*	margin-left: 5%;*/
+	margin:20px 0% 20px 5%;
+	width:60%;
+	color:#66fcf1;
+	padding-left: 20px;
+	height: 40px;
+	border-radius: 5px;
+}
+.input-link::placeholder{
+	color: #66fcf1;
+	/*text-align: center;*/
+	opacity:0.8;
+
+}
+#submit-box{
+	/*border:solid 1px #000;*/
+	margin-top: 40px;
+	width: 100%;
+
+}
+#submit-butt{
+	border:0px solid #000;
+	border-radius:10px;
+	text-align: center;
+	width:26%;
+	height:50px;
+	margin: 5px 37%;
+	margin-bottom: 15px;
+	font-weight: bold;
+	background:#66fcf1;
+	/*margin-left: 35%*/
+
+}
+#submit-butt:hover{
+	background: #1b1c20;
+	color:#66fcf1;
+	border:3px solid #66fcf1;
+}
+.input-value{
+	width: 100%;
+	height: 100%;
+	border:0px;
+	border-bottom:1px #000 solid;
+	background: #1b1c20;
+	color: #66fcf1;
+}
+.site-select{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+
+ .site-select-check-box{
+ 	/*border: 1px solid #fff;*/
+ 	width: 60%;
+ 	margin-left: 20%;
+ 	margin-top: 50px;
+ 	color:#66fcf1;
+ 	text-align:center;
+ }
+ .select-check{
+ 	margin-top: 20px;
+ 	font-size: 1.8rem;
+ }
+ input#site1,input#site2,input#site3{
+ 	width:15px;
+ 	height:15px;
+ 	border:3px solid #66fcf1;
+ }
+</style>
+
+<body>
+	<div class="container">
+		<div id="row">
+			<form action='' method="POST">{% csrf_token %}
+				<div class="input-element">
+					<label for="item">Item Name:</label>
+					<input class="input-link" type="text" id="item" name="item" placeholder="Item Name" required="true">
+				</div>
+			<!-- <div class="input-element site-select">
+				<select class="input-value" required id="site1" name ="site1">
+				  <option value="0">Select Site 1*</option>
+				  <option value="1">Amazon</option>
+				  <option value="2">Flipkart</option>
+				  <option value="3">Croma</option>
+				</select>
+			</div>
+			<div class="input-element site-select">
+				<select class="input-value" required id="site2" name = "site2">
+				  <option value="0">Select Site 2*</option>
+				  <option value="1">Amazon</option>
+				  <option value="2">Flipkart</option>
+				  <option value="3">Croma</option>
+				</select>
+			</div>
+			<div class="input-element site-select">
+				<select class="input-value" required id="site3" name ="site3">
+				  <option value="0">Select Site 3*</option>
+				  <option value="1">Amazon</option>
+				  <option value="2">Flipkart</option>
+				  <option value="3">Croma</option>
+				</select>
+			</div> -->
+			<div class="site-select-check-box">
+				<div class="select-check">
+					<input type="checkbox" name="amazon" id='site1' value="1">
+					<label>Amazon</label>
+				</div>
+				<div class="select-check">
+					<input type="checkbox" name="flipkart" id='site2' value="1">
+					<label>Flipkart</label>
+				</div>
+				<div class="select-check">
+					<input type="checkbox" name="croma" id='site3' value="1">
+					<label>Croma</label>
+				</div>
+			</div>
+				<!-- <div class="input-element">
+					<label for="link2">Link 2:</label>
+					<input class="input-link" type="url" id="link2" name="link2" placeholder="Link2" required="true">
+				</div>
+				<div class="input-element">
+					<label for="link3">Link 3:</label>
+					<input class="input-link" type="url" id="link3" name="link3" placeholder="Link3" required="true">
+				</div> -->
+				<div id="submit-box">
+					<input type="submit" id="submit-butt" name="Submit" value="Submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

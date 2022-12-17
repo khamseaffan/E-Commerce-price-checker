@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-commerce Price Checker</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="{%static 'styles/main.css'}"> -->
+</head>
+<style type="text/css">
+	*{
+	box-sizing: border-box;
+}
+body{
+	background-color: #1b1c20;
+	color:#66fcf1;
+}
+.container{
+	margin-top: 50px;
+	width:100%;
+	/*border:solid 1px #000;*/
+}
+#result1 > h1,#result2 > h1{
+	margin-top: 50px;
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 3rem;
+}
+.result1-price-box{
+	font-size: 25px;
+	margin: 40px 0px 0px 0%;
+	text-align: center;
+}
+.price{
+	display: inline-block;
+	margin-left: 60px;
+}
+.site{
+	display: inline-block;
+	width:100px;
+	text-align: right;
+}
+.bprice{
+	text-align: center;
+	font-size: 3rem;
+}
+.result1-price-box a,.bprice a{
+	text-decoration:none;
+	color:#66fcf1;
+	cursor: pointer;
+}
+.result1-price-box a:hover,.bprice a:hover{
+	text-decoration: none;
+	/*font-weight: bold;*/
+}
+.note{
+ 	color: #66fcf1;
+ 	font-size: 0.8rem;
+ 	text-align: center;
+}
+</style>
+
+<body>
+	<div class="container">
+		<div id="row">
+			<div id="result1">
+				<h1>Price Retrieved</h1>
+				<div class="result1-price-box">
+					<a href={{amazon_link}}><div class="site">Amazon:</div><div class="price">{{amazon_price}}</div></a>
+				</div>
+				<div class="result1-price-box">
+					<a href={{flip_link}}><div class="site">FlipKart:</div><div class="price">{{flipkart_price}}</div></a>
+				</div>
+				<div class="result1-price-box">
+					<a href={{croma_link}}><div class="site">Croma:</div><div class="price">{{croma_price}}</div></a>
+				</div>
+			</div>
+			<div id="result2">
+				<h1>Best Price</h1>
+				<div class="bprice"><a href={{best_price_link}}>{{best_price}}</a></div>
+				<div class="note">*Click on the price to redirect to the site</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
